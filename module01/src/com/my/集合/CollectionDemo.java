@@ -1,6 +1,7 @@
 package com.my.集合;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * @auther Summerday
@@ -12,7 +13,7 @@ public class CollectionDemo {
 //        System.out.println(arr[0].getClass());
 
 //        //表示存储的元素是字符串
-//        Collection<String> c = new ArrayList<>();
+        Collection<String> c = new ArrayList<>();
 //
 //        //添加数据
 //        c.add("天");
