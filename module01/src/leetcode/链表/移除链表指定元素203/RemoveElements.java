@@ -15,9 +15,7 @@ public class RemoveElements {
         //定义两个指针，前向指向哨兵节点，当前指向head
         ListNode prev = sentinel;
         ListNode curr = head;
-
         while(curr!=null){
-
             if(curr.val == val){
                 //当前节点值就是指定值，则让上一个节点的next指向下一个节点
                 prev.next = curr.next;
@@ -27,11 +25,9 @@ public class RemoveElements {
             }
             //遍历下一节点
             curr = curr.next;
-
         }
         //返回哨兵节点的下一节点
         return sentinel.next;
-
     }
 }
 class ListNode{
