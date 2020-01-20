@@ -1,4 +1,5 @@
-package com.my.IO流;
+package com.my.IO流.IO文件流;
+
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -16,10 +17,9 @@ public class FileReaderDemo1 {
 //        System.out.println(new java.lang.String(cs));
 
 
-
         int len;
-        while((len =reader.read(cs))!=-1){
-            System.out.println(new String(cs,0,len));
+        while ((len = reader.read(cs)) != -1) {
+            System.out.println(new String(cs, 0, len));
         }
         reader.close();
     }

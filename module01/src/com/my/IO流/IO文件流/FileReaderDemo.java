@@ -1,4 +1,4 @@
-package com.my.IO流;
+package com.my.IO流.IO文件流;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -31,9 +31,9 @@ public class FileReaderDemo {
         char[] cs = new char[5];
         //定义变量记录读取到的字符个数
         int m;
-        while((m = reader.read(cs))!=-1){
+        while ((m = reader.read(cs)) != -1) {
             //将读取到的内容写入新的文件中
-            writer.write(cs,0,m);
+            writer.write(cs, 0, m);
 
         }
         reader.close();

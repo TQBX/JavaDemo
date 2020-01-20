@@ -1,4 +1,4 @@
-package com.my.IO流;
+package com.my.IO流.IO文件流;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,13 +22,13 @@ public class FileWriterDemo2 {
             e.printStackTrace();
         } finally {
             //判断writer对象是否成功初始化
-            if(writer!=null) {
+            if (writer != null) {
                 //关流，无论成功与否
                 try {
                     writer.close();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }finally {
+                } finally {
                     //无论关流成功与否，都是有意义的：标为垃圾对象，强制回收
 
                     writer = null;

@@ -1,4 +1,4 @@
-package com.my.IO流;
+package com.my.IO流.IO文件流;
 
 import java.io.FileWriter;
 import java.io.IOException;
