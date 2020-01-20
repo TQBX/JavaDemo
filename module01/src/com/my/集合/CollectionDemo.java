@@ -78,5 +78,6 @@ public class CollectionDemo {
 //        c.forEach(s -> System.out.print(s));
 
 //        c.forEach(System.out::print);
+
     }
 }

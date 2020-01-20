@@ -1,9 +1,6 @@
 package com.my.集合;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @auther Summerday
@@ -12,22 +9,27 @@ public class TraversalTest {
     public static void main(String[] args) {
         List<Integer> linkedList = new LinkedList<>();
         List<Integer> arrayList = new ArrayList<>();
-        for (int i = 0; i < 500000; i++) {
-
+        /*ArrayList不得不加大数量观察它们的区别，其实差别不大*/
+        for (int i = 0; i < 5000000; i++) {
             arrayList.add(i);
         }
+        /*LinkedList 这个量级就可以体现比较明显的区别*/
         for(int i = 0;i<50000;i++){
             linkedList.add(i);
         }
-        forTest(arrayList);
+        /*方法调用*/
+//        forTest(arrayList);
 //        iteratorTest(arrayList);
-        forTestNew(arrayList);
 //        forTest(linkedList);
-
 //        iteratorTest(linkedList);
+        display(arrayList);
+        display(linkedList);
+
+
 
 
     }
+    /*for循环遍历的测试*/
     public static void forTest(List list){
         long start = System.currentTimeMillis();
         for (int i = 0,n=list.size(); i < n; i++) {
@@ -35,17 +37,9 @@ public class TraversalTest {
         }
         long end = System.currentTimeMillis();
         long time = end - start;
-        System.out.println(list.getClass()+" for test cost:"+time);
+        System.out.println(list.getClass()+" for循环遍历测试 cost:"+time);
     }
-    public static void forTestNew(List list){
-        long start = System.currentTimeMillis();
-        for (int i = 0; i <list.size(); i++) {
-            list.get(i);
-        }
-        long end = System.currentTimeMillis();
-        long time = end - start;
-        System.out.println(list.getClass()+" for testNew cost:"+time);
-    }
+    /*Iterator遍历的测试*/
     public static void iteratorTest(List list){
         long start = System.currentTimeMillis();
         Iterator iterator = list.iterator();
@@ -54,6 +48,16 @@ public class TraversalTest {
         }
         long end = System.currentTimeMillis();
         long time = end-start;
-        System.out.println(list.getClass()+"iterator test cost:"+time);
+        System.out.println(list.getClass()+"迭代器遍历测试 cost:"+time);
+    }
+
+    public static void display(List<?> list){
+        if(list instanceof RandomAccess){
+            //如果支持快速随机访问
+            forTest(list);
+        }else {
+            //不支持快速随机访问，就用迭代器
+            iteratorTest(list);
+        }
     }
 }
