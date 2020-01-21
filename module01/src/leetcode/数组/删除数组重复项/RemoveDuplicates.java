@@ -1,4 +1,4 @@
-package leetcode.arrayTest.pac26;
+package leetcode.数组.删除数组重复项;
 
 import java.util.Arrays;
 
