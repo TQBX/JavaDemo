@@ -20,11 +20,12 @@ public class HashMapDemo {
         for(char c:cs){
             //判断字符是否出现过
             if(map.containsKey(c))
-                //如果字符出现过，那得在之前的次数上嘉义
+                //如果字符出现过，那得在之前的次数上+1
                 map.put(c,map.get(c)+1);
             else
                 map.put(c,1);
         }
+
 
         //Entry是Map接口的内部接口，Map.Entry<Character,Integer> entry
         for(Map.Entry<Character,Integer> entry:map.entrySet())
