@@ -38,9 +38,34 @@ public class Sequence {
             return items[i];
         }
     }
+    //reverseSelector implements Selector
+    private class reverseSelector implements Selector{
+        private int i = items.length-1;
+        @Override
+        public boolean end() {
+            return i == -1;
+        }
+
+        @Override
+        public void next() {
+            if(i>-1){
+                i--;
+            }
+        }
+
+        @Override
+        public Object current() {
+            return items[i];
+        }
+
+
+    }
+    public Selector reverseSelector(){
+        return new reverseSelector();
+    }
 
     //Upgrading to interfaces, hiding implementation details
-    public Selector selector() {
+    public Selector sequenceSelector() {
         return new SequenceSelector();
     }
 
@@ -49,19 +74,23 @@ public class Sequence {
         for (int i = 0; i < 10; i++) {
             sq.add(Integer.toString(i));
         }
-        Selector sl = sq.selector();
+        Selector sl = sq.sequenceSelector();
 
         while (!sl.end()) {
             System.out.print(sl.current() + " ");
             sl.next();
+        }
+        System.out.println();
+        Selector s2 = sq.reverseSelector();
+        while(!s2.end()){
+            System.out.print(s2.current()+" ");
+            s2.next();
         }
     }
 }
 
 interface Selector {
     boolean end();
-
     void next();
-
     Object current();
 }
