@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * @auther Summerday
  */
-public class FileInputStreamDemo {
+public class  FileInputStreamDemo {
 
     public static void main(String[] args) throws Exception{
         FileInputStream in = new FileInputStream("E:\\1myblog\\Javablog\\Collection\\pic\\Node.png");
