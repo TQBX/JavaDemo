@@ -8,17 +8,14 @@ import java.io.FileWriter;
  */
 public class BufferedWriterDemo {
     public static void main(String[] args) throws Exception {
-        //真正向文件中写数据的流是FileWriter
-        //bw 提供了更大的缓冲区
+        //真正向文件中写数据的流是FileWriter，本身具有缓冲区
+        //BufferedWriter 提供了更大的缓冲区
         BufferedWriter writer = new BufferedWriter(new FileWriter("E:\\b.txt"));
-
-        writer.write("hua yu hao");
-
+        writer.write("天乔");
         //换行： Windows中换行是 \r\n   linux中只有\n
-        //统一换行
+        //提供newLine() 统一换行
         writer.newLine();
-        writer.write("handsome");
+        writer.write("巴夏");
         writer.close();
-
     }
 }

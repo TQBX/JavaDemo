@@ -13,7 +13,6 @@ public class ObjectOutputStreamDemo {
         Person p = new Person();
         p.setAge(18);
         p.setName("Niu");
-        //将p序列化
         //创建序列化流
         //真正将数据写出的流是FileOutputStream
         //ObjectOutputStream将对象转化为字节
@@ -23,8 +22,10 @@ public class ObjectOutputStreamDemo {
         out.close();
     }
 }
-
+//必须实现Serializable接口
 class Person implements Serializable {
+    //序列化ID serialVersionUID
+    private static final long serialVersionUID = 6402392549803169300L;
     private String name;
 
     public int getAge() {

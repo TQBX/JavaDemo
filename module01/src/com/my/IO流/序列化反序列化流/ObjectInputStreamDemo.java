@@ -13,13 +13,10 @@ public class ObjectInputStreamDemo {
         //真正读取文件的是FileInputStream
         //ObjectInputStream将读取的字节转化为对象
         ObjectInputStream in = new ObjectInputStream(new FileInputStream("D:\\1.data"));
-
         Person p = (Person)in.readObject();
-
         in.close();
-
-        System.out.println(p.getName());
-        System.out.println(p.getAge());
+        System.out.println(p.getName());//Niu
+        System.out.println(p.getAge());//18
 
     }
 }

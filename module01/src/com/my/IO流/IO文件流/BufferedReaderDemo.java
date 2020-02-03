@@ -7,12 +7,12 @@ import java.io.*;
  */
 public class BufferedReaderDemo {
     public static void main(String[] args) throws IOException {
-        /*FileReader reader = new FileReader("D:\\b.txt");
+        //真正读取文件的流是FileReader，它本身并没有缓冲区
+        FileReader reader = new FileReader("D:\\b.txt");
         BufferedReader br = new BufferedReader(reader);
         //读取一行
-//        String str = br.readLine();
-
-//        System.out.println(str);
+        //String str = br.readLine();
+        //System.out.println(str);
 
         //定义一个变量来记录读取的每一行的数据（回车）
         String str;
@@ -21,7 +21,7 @@ public class BufferedReaderDemo {
             System.out.println(str);
         }
         //关外层流即可
-        br.close();*/
+        br.close();
 
         countJavaCode(new File("E:\\java_learning\\project01\\module01\\src\\leetcode\\pac20"));
         System.out.println(count);
