@@ -14,7 +14,7 @@ public class Main {
         Bank bank = new Bank(account);
         Thread bankThread = new Thread(bank);
 
-        System.out.println("Account : Initial Balance: "+account.getBalance());
+        System.out.println("Profiler : Initial Balance: "+account.getBalance());
 
         companyThread.start();
         bankThread.start();
@@ -22,7 +22,7 @@ public class Main {
         try{
             companyThread.join();
             bankThread.join();
-            System.out.println("Account : Final Balance: "+account.getBalance());
+            System.out.println("Profiler : Final Balance: "+account.getBalance());
         }catch (InterruptedException e){
             e.printStackTrace();
         }
