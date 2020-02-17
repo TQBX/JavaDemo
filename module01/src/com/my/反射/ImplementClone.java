@@ -2,29 +2,32 @@ package com.my.反射;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 /**
  * @auther Summerday
  */
+
+@SuppressWarnings("unchecked")
 public class ImplementClone {
     public Object clone(Object o) throws Exception{
         //获取对象的实际类型
         Class<Object> clz = (Class<Object>) o.getClass();
 
-
         //获取所有构造方法
         Constructor<Object>[] cs = (Constructor<Object>[]) clz.getDeclaredConstructors();
+        //任取一个构造方法
         Constructor<Object> c = cs[0];
 
-        //执行这个构造方法，获取对象
-        //可能没有参数，也可能有，有的话，参数类型是啥
+        //防止取出构造方法为私有
+        c.setAccessible(true);
+
+        //该构造方法参数有or无？
 
         //获取参数类型
         Class[] ps = c.getParameterTypes();
         //存储参数的数组
         Object[] os = new Object[ps.length];
-//        if(ps.length != 0),说明有参数
-        //基本or引用？
 
         for(int i = 0;i<ps.length;i++){
             //判断是否为基本类型
@@ -46,6 +49,11 @@ public class ImplementClone {
         Field[] fs = clz.getDeclaredFields();
 
         for (Field f : fs){
+
+            //final修饰的变量无法更改
+            if((f.getModifiers()& Modifier.FINAL)!= 0){
+                continue;
+            }
             //暴力破解
             f.setAccessible(true);
 
@@ -53,9 +61,10 @@ public class ImplementClone {
             Object value = f.get(o);
 
             //将取出的属性值赋值给新对象的属性
-            f.set(obj,value);
-        }
+            f.set(obj, value);
 
+
+        }
         return obj;
     }
 }
