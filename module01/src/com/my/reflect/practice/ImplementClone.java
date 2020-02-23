@@ -1,5 +1,7 @@
 package com.my.reflect.practice;
 
+import com.my.base.Person;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -10,7 +12,7 @@ import java.lang.reflect.Modifier;
 
 @SuppressWarnings("unchecked")
 public class ImplementClone {
-    public Object clone(Object o) throws Exception{
+    public static Object clone(Object o) throws Exception{
         //获取对象的实际类型
         Class<Object> clz = (Class<Object>) o.getClass();
 
@@ -50,8 +52,8 @@ public class ImplementClone {
 
         for (Field f : fs){
 
-            //final修饰的变量无法更改
-            if((f.getModifiers()& Modifier.FINAL)!= 0){
+            //如果final修饰则返回，无法修改
+            if((f.getModifiers()&Modifier.FINAL)!=0){
                 continue;
             }
             //暴力破解
@@ -63,8 +65,16 @@ public class ImplementClone {
             //将取出的属性值赋值给新对象的属性
             f.set(obj, value);
 
-
         }
         return obj;
+    }
+}
+
+
+class TestDEmo{
+    public static void main(String[] args) throws Exception {
+        Person p = new Person(15, "dewa", "deaw");
+        Person o = (Person) ImplementClone.clone(p);
+        System.out.println(o);
     }
 }

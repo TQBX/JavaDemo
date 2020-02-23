@@ -4,11 +4,6 @@ package com.my.reflect.practice;
  * @auther Summerday
  */
 
-/**
- * 框架类，可创建人任意类的对象，任意类的方法
- */
-
-
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.Properties;
@@ -21,7 +16,7 @@ import java.util.Properties;
  *
  * 二、在程序中加载读取配置文件
  *
- * 三、使用反射计数来加载类文件进内存
+ * 三、使用反射来加载类文件进内存
  *
  * 四、创建对象
  *

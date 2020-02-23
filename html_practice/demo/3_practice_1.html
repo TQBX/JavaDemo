@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>信息登录页面</title>
+    </head>
+    <body>
+        <form action="https://www.baidu.com" method="get">
+            <table border="1" align="center" width="500">
+                <!--第1行-->
+                <tr>
+                    <td><label for="username">用户名</label></td>
+                    <td colspan="2"><input type="text" placeholder="请输入账号" name="username" id="username"></td>
+
+                </tr>
+                <!--第2行-->
+                <tr>
+                    <td><label for="password">密码</label></td>
+                    <td colspan="2"><input type="password" placeholder="请输入密码" name="password" id="password"></td>
+
+                </tr>
+                <!--第3行-->
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td colspan="2"><input type="email" placeholder="请输入Email" name="email" id="email"></td>
+
+                </tr>
+                <!--第4行-->
+                <tr>
+                    <td><label for="name">姓名</label></td>
+                    <td colspan="2"><input type="text" placeholder="请输入真实姓名" name="realName" id="name"></td>
+
+                </tr>
+                <!--第5行-->
+                <tr>
+                    <td><label for="tel">手机号</label></td>
+                    <td colspan="2"><input type="tel" placeholder="请输入您的手机号" name="tel" id="tel"></td>
+
+                </tr>
+                <!--第6行-->
+                <tr>
+                    <td><label>性别</label></td>
+                    <td colspan="2">
+                        <input type="radio" checked name="gender" value="male">男
+                        <input type="radio" name="gender" value="female">女
+
+                    </td>
+
+                </tr>
+                <!--第7行-->
+                <tr>
+                    <td><label for="birthday">出生日期</label></td>
+                    <td colspan="2"><input type="date" name="birthday" id="birthday"></td>
+
+                </tr>
+
+                <!--第8行-->
+                <tr>
+                    <td><label for="checkCode">验证码</label></td>
+                    <td><input type="text" name="checkCode" id="checkCode"></td>
+                    <td><img src="../image/stop.png" alt="验证码" width="50px" height="50px"></td>
+
+                </tr>
+
+                <!--第9行-->
+                <tr>
+                    <td colspan="3" align="center">
+                        <input type="submit" value="提交" align="center">
+                    </td>
+
+                </tr>
+
+
+            </table>
+        </form>
+    </body>
+</html>

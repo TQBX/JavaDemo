@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="../css/a.css">
+
+        <!--<style>-->
+        <!--    @import "css/a.css";-->
+        <!--</style>-->
+
+    </head>
+    <body>
+
+
+        <!--
+
+        1、内联样式
+            - 在标签内使用style属性指定css代码
+            - 如<div style="color: aqua">hello world</div>
+        2、内部样式
+            - 在head标签内定义style标签，style标签的标签体内容就是css代码
+            -         <style>
+                        div{
+                            color:blue;
+                            }
+                        </style>
+        3、外部样式
+            - 定义css资源文件
+            - div{
+                color: aqua;
+                }
+            - 在head标签内定义link标签，引入外部资源文件
+            - <link rel="stylesheet" href="css/a.css">
+            - 第二种写法
+                    <style>
+                        @import "css/a.css";
+                    </style>
+
+
+
+
+        这三种方式 css作用的范围越来越大
+        第一种方式不常用，后期常用的是2和3
+        -->
+        <div>hello world</div>
+        <!--div标签独占一行,块级元素-->
+        <div>hello world</div>
+
+
+        <!--
+        p标签  :段落标签
+            也独占一行,块级元素-->
+        <p>你好</p>
+        <p>你好</p>
+
+        <!--span行内元素,不占一行,多个元素可占一行-->
+        <span>span</span>
+        <span>span</span>
+
+
+
+    </body>
+</html>
