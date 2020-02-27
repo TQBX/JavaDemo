@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>表单校验</title>
+        <link rel="stylesheet" href="../css/check.css">
+
+        <script src="../js/check.js"></script>
+    </head>
+    <body>
+
+        <div class="center">
+            <div id="customers">
+                <form action="https://www.baidu.com" onsubmit="return checkData()" method="get">
+
+                    <table>
+                        <caption id="head">
+                            注册表单
+                        </caption>
+
+                        <!--第1行-->
+                        <tr>
+                            <td class="left"><label for="username">用户名:</label></td>
+                            <td class="right"><input type="text" name="username"
+                                                     id="username" placeholder="请输入用户名">
+                                <span id="username_msg"></span></td>
+                        </tr>
+
+
+                        <!--第2行-->
+                        <tr>
+                            <td class="left"><label for="password">密码:</label></td>
+                            <td class="right"><input type="password" name="password"
+                                                     id="password" placeholder="请输入密码">
+                                <span id="password_msg"></span></td>
+                        </tr>
+
+
+                        <!--第3行-->
+                        <tr>
+                            <td class="left"><label for="rePassword">确认密码</label></td>
+                            <td class="right"><input type="password" name="rePassword"
+                                                     id="rePassword" placeholder="请确认密码">
+                                <span id="rePassword_msg"></span></td>
+                        </tr>
+
+
+                        <!--第4行-->
+                        <tr>
+                            <td class="left"><label for="name">昵称</label></td>
+                            <td class="right"><input type="text" name="name"
+                                                     id="name" placeholder="请输入昵称">
+                                <span id="name_msg"></span></td>
+                        </tr>
+
+                        <!--第5行-->
+                        <tr class="alt">
+                            <td class="left"><label for="email">邮箱</label></td>
+                            <td class="right"><input type="text" name="email"
+                                                     id="email" placeholder="请输入邮箱">
+                                <span id="email_msg"></span></td>
+                        </tr>
+
+                        <!--第6行-->
+                        <tr>
+                            <td class="left"><label for="file">头像</label></td>
+                            <td class="right"><input type="file" name="file" value="选择文件" id="file">
+                                <span id="file_msg"></span></td>
+                        </tr>
+
+                        <!--第8行-->
+                        <tr>
+                            <td class="left">性别</td>
+                            <td class="right"><input type="radio" name="gender" checked value="Male">男
+                                <input type="radio" name="gender" value="Female">女
+
+                                <span id="gender_msg"></span>
+                            </td>
+                        </tr>
+
+
+                        <!--第9行-->
+                        <tr>
+                            <td class="left">爱好</td>
+                            <td class="right">
+                                <input type="checkbox" name="hobby" value="eat">吃饭
+                                <input type="checkbox" name="hobby" value="sleep">睡觉
+                                <input type="checkbox" name="hobby" value="playTo">打豆豆
+                                <span id="hobby_msg"></span>
+                            </td>
+                        </tr>
+
+
+                        <!--第10行-->
+                        <tr>
+                            <td class="left"><label for="province">所在地址</label></td>
+                            <td class="right">
+                                <select name="province" id="province" onchange="selectCity()">
+                                    <option value="province_null">--选择省市--</option>
+                                    <option value="浙江省">浙江省</option>
+
+                                    <option value="北京市">北京市</option>
+
+                                </select>
+
+                                <select name="city" id="city">
+                                    <option>--选择城市--</option>
+                                </select>
+                                <span id="addr_msg"></span>
+                            </td>
+
+                        </tr>
+
+
+                        <!--第11行-->
+                        <tr>
+                            <td class="left"><label for="info">自我介绍</label></td>
+                            <td class="right"><textarea name="info" id="info" cols="30" rows="10"
+                                                        placeholder="请输入个人描述"></textarea>
+                                <span id="info_msg"></span>
+                            </td>
+                        </tr>
+
+                        <!--第12行-->
+                        <tr>
+                            <td class="left"><label for="code">验证码</label></td>
+                            <td class="right"><input type="text" name="code" id="code">
+                                <img src="../image/Lock.png" id="img" alt="验证码">
+                                <input type="button" value="点我换一张" onclick="changeImg()">
+                                <span id="code_msg"></span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="2">
+                                <p class="submit">
+                                    <input type="submit" value="提交">
+                                    <input type="reset" value="重置">
+                                </p>
+                            </td>
+
+
+                        </tr>
+
+                    </table>
+
+                </form>
+            </div>
+        </div>
+
+
+    </body>
+</html>
