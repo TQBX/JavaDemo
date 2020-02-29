@@ -27,8 +27,7 @@ var selectCity = function () {
         city_div.innerHTML += "<option value =" + city_array[i] + ">" + city_array[i] + "</option>";
     }
 };
-//增加失去焦点事件
-//TODO
+
 //表单校验
 function checkData() {
 
