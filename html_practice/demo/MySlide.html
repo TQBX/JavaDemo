@@ -197,6 +197,7 @@
                             "left": -picWidth + "px"
                         }, 0
                     );
+                    //索引切换为A的索引
                     index = 1;
                 }
                 //index<1的情况将会发生在点击上一张时
@@ -205,6 +206,7 @@
                             "left": -picWidth * (size - 2) * +"px"
                         }, 0
                     );
+                    //索引切换为C的索引
                     index = size - 2;
                 }
 
@@ -215,12 +217,9 @@
                 $dot.eq(index-1).addClass("active").siblings().removeClass("active");
             }
             //点击小圆点事件
-            $dot.click(function (event) {
-                //获取的是dom对象
-                var target = event.target;
-
-                //转为jQuery对象，索引加一
-                index = $(target).index()+1;
+            $dot.click(function () {
+                //this为当前触发事件的DOM元素
+                index = $(this).index()+1;
 
                 changeImg();
                 changeDots();
