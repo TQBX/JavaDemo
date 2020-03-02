@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <script src="../jquery-1.4.2.min.js"></script>
+    <body>
+        <a href="#" class="tooltip" title="这是我的超链接提示。">提示</a>
+
+        <a href="#" title="这是自带的提示">自带提示</a>
+
+    </body>
+    <script>
+        var y_offset = 20;
+        var x_offset = 10;
+        //e代表的是鼠标嘛
+        $("a.tooltip").mouseover(function (e) {
+            //显示title
+            //创建div
+
+            this.myTitle = this.title;
+            this.title = "";
+            $("<div id='tooltip'>"+this.myTitle+"</div>").appendTo("body");
+
+            $("#tooltip").css(
+
+                {
+                    "fontSize": "12px",
+                    "top":(e.pageY+y_offset)+"px",
+                    "left":(e.pageX+x_offset)+"px"
+
+                }
+            ).show("fast");
+        }).mouseout(function () {
+            //隐藏title
+            $("#tooltip").remove();
+            this.title = this.myTitle;
+        }).mousemove(function (e) {
+            $("#tooltip").css(
+
+                {
+                    "fontSize": "12px",
+                    "top":(e.pageY+y_offset)+"px",
+                    "left":(e.pageX+x_offset)+"px"
+
+                }
+            );
+        })
+
+
+
+    </script>
+</html>
